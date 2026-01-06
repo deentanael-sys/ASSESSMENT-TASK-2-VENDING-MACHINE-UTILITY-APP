@@ -1,7 +1,5 @@
 import tkinter as tk
 from tkinter import *
-from Vend_backend import *
-import Vend_backend
 
 window = tk.Tk()
 window.title("Vending Machine App")
@@ -19,9 +17,6 @@ label = Label(window,
             bd=10,
 )
 
-if vend_item():
-    label.pack
-
 
 button = Button(window,
                 text="Vend Item",
@@ -30,7 +25,6 @@ button = Button(window,
                 bg="blue",
                 relief=RAISED,
                 bd=5,
-                command=Vend_backend.vend_item
 )
 button.pack(pady=20)
     
