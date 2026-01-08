@@ -1,15 +1,18 @@
 import time
 
+'''Vending Machine App for Introduction to Programming 2nd Task'''
 
-#shows the list of products with prodcut title code and price(DONE)
-# asks the user for the product code(DONE)
+# shows the list of products with prodcut title code and price(DONE)
+# asks the user to input the product code(DONE)
 # User enters product code it automatically goes to the cart and adds the item price to the balance(DONE)
+# if the item is out of stock, it notifies the user and asks for another selection (DONE)
 # asks if the user wants to purchase another item and adds another (DONE)
-# and if user types exit, it ends the transaction and returns the balance (DONE)
-# if the item is out of stock, it notifies the user and asks for another selection ()
-# returns change if there is any left after the transaction ()
-#add menu at start with options to vend item, restock items, exit program ()
-# then you can insert money
+# after user is done with selection user is asked to input money (DONE)
+# returns change if there is any left after the transaction (DONE)
+
+usermoney = 0.0  #variable to store user money input
+total_price = 0.0 #total price variable to keep track of the total cost of items selected
+cartfinal = []  #list to keep track of items in the cart
 
 items = { #Lisitng of items in the vending machine with their stock levels
         'A1': {'name': "Fred's Eyeball", 'price': 5.50, 'stock': 2},
@@ -25,10 +28,6 @@ items = { #Lisitng of items in the vending machine with their stock levels
         'C3': {'name': "A Frying Pan", 'price': 3.50, 'stock': 1},
         'C4': {'name': "Holy Hand Grenades", 'price': 4.00, 'stock': 5},
     }
-
-usermoney = 0.0  #variable to store user money input
-total_price = 0.0 #total price variable to keep track of the total cost of items selected
-cartfinal = []  #list to keep track of items in the cart
 
 def transaction():  #function to handle the transaction and change return
     global usermoney
@@ -109,7 +108,5 @@ def vend_item():
         print("Invalid product code. Please try again.")
         time.sleep(1)
         return vend_item()
-    
-
           
 vend_item()
